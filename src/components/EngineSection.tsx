@@ -2,7 +2,11 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Brain, Network, Cpu } from 'lucide-react';
 
-export default function EngineSection() {
+interface Props {
+  onRestart: () => void;
+}
+
+export default function EngineSection({ onRestart }: Props) {
   const { t } = useTranslation();
   const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -13,28 +17,26 @@ export default function EngineSection() {
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-32 py-20 relative flex flex-col items-center justify-center border-t border-white/10">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1, ease: easeOutExpo }}
-        className="text-center mb-16"
-      >
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, y: -100, scale: 0.9 }}
+      transition={{ duration: 0.8, ease: easeOutExpo }}
+      className="min-h-screen w-full max-w-5xl mx-auto flex flex-col items-center justify-center relative px-6"
+    >
+      <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('engine.title')}</h2>
-      </motion.div>
+      </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 w-full relative">
-        {/* Decorative connecting line (only visible on md+) */}
         <div className="hidden md:block absolute top-1/2 left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 z-0" />
-
+        
         {nodes.map((node, i) => (
           <motion.div
             key={node.id}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: i * 0.2, ease: easeOutExpo }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.2 + 0.2, ease: easeOutExpo }}
             className="flex flex-col items-center gap-6 relative z-10"
           >
             <div className={`w-28 h-28 rounded-3xl ${node.bg} backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl relative group`}>
@@ -50,15 +52,17 @@ export default function EngineSection() {
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: easeOutExpo }}
         className="mt-28"
       >
-        <button className="px-10 py-5 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+        <button 
+          onClick={onRestart}
+          className="px-10 py-5 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+        >
           {t('engine.cta')}
         </button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

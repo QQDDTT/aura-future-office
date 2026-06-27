@@ -1,50 +1,49 @@
 import { motion, type Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { CheckCircle2, ArrowRight, Zap } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Zap, ChevronDown } from 'lucide-react';
 
 interface ScenarioProps {
   scenarioKey: string;
+  onNext: () => void;
+  isLast?: boolean;
 }
 
-export default function ScenarioCard({ scenarioKey }: ScenarioProps) {
+export default function ScenarioCard({ scenarioKey, onNext, isLast }: ScenarioProps) {
   const { t } = useTranslation();
+  const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { ease: easeOutExpo, duration: 0.8 } }
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto my-32">
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-12 flex justify-center"
-      >
+    <motion.div 
+      initial={{ opacity: 0, y: 80, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -80, scale: 0.95 }}
+      transition={{ duration: 0.8, ease: easeOutExpo }}
+      className="min-h-screen w-full max-w-6xl mx-auto flex flex-col justify-center py-20 px-6"
+    >
+      <div className="mb-12 flex justify-center">
         <div className="inline-block px-6 py-3 rounded-2xl rounded-bl-sm bg-white/5 border border-white/10 backdrop-blur-sm shadow-xl">
           <span className="text-base font-medium text-purple-200">"{t(`scenarios.${scenarioKey}.intent`)}"</span>
         </div>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Past - Traditional */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: easeOutExpo }}
           className="p-8 rounded-[2rem] bg-black/40 border border-white/5 flex flex-col gap-6"
         >
           <div className="text-gray-500 font-semibold">{t(`scenarios.${scenarioKey}.past_title`)}</div>
@@ -60,11 +59,9 @@ export default function ScenarioCard({ scenarioKey }: ScenarioProps) {
           </div>
         </motion.div>
 
-        {/* Future - Aura Agent */}
         <motion.div 
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="visible"
           variants={containerVariants}
           className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl flex flex-col gap-6 relative overflow-hidden"
         >
@@ -92,6 +89,21 @@ export default function ScenarioCard({ scenarioKey }: ScenarioProps) {
           </div>
         </motion.div>
       </div>
-    </div>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.8 }}
+        className="mt-16 flex justify-center"
+      >
+        <button 
+          onClick={onNext}
+          className="flex flex-col items-center gap-2 text-gray-500 hover:text-white transition-colors duration-300 group"
+        >
+          <span className="text-sm font-medium tracking-wider">{isLast ? '进入反应堆' : '下一个场景'}</span>
+          <ChevronDown className="w-5 h-5 animate-bounce group-hover:text-purple-400" />
+        </button>
+      </motion.div>
+    </motion.div>
   );
 }

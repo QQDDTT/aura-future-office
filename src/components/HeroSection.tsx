@@ -2,16 +2,21 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Sparkles } from 'lucide-react';
 
-export default function HeroSection() {
+interface Props {
+  onNext: () => void;
+}
+
+export default function HeroSection({ onNext }: Props) {
   const { t } = useTranslation();
   const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative z-10 pt-20 pb-20">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 relative z-10">
       <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: easeOutExpo }}
+        initial={{ opacity: 0, y: 50, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -50, scale: 0.95 }}
+        transition={{ duration: 0.8, ease: easeOutExpo }}
         className="text-center max-w-5xl mx-auto flex flex-col items-center"
       >
         <motion.div
@@ -38,6 +43,7 @@ export default function HeroSection() {
         </motion.p>
         
         <motion.button
+          onClick={onNext}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: easeOutExpo }}
