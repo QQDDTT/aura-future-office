@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, Zap } from 'lucide-react';
+import { ChevronDown, Ticket, Clock, Users, Zap } from 'lucide-react';
 
 interface Props {
   onNext: () => void;
@@ -43,16 +43,32 @@ export default function HRScenario({ onNext, isLast }: Props) {
                 <path d="M 200 150 Q 400 150 400 220" stroke="#333" strokeWidth="3" strokeDasharray="5,5" fill="none" />
                 
                 <g transform="translate(150, 130)">
-                  <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node1')}</text>
+                  <rect width="110" height="40" rx="8" fill="#111" stroke="#333" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#888]">
+                      <Ticket size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.hr.past_node1')}</span>
+                    </div>
+                  </foreignObject>
                 </g>
                 <g transform="translate(350, 60)">
-                  <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node2')}</text>
+                  <rect width="110" height="40" rx="8" fill="#220000" stroke="#ef4444" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#ef4444]">
+                      <Clock size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.hr.past_node2')}</span>
+                    </div>
+                  </foreignObject>
+                  <motion.rect width="110" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '55px', originY: '20px' }} />
                 </g>
                 <g transform="translate(350, 200)">
-                  <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node3')}</text>
+                  <rect width="110" height="40" rx="8" fill="#111" stroke="#333" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#888]">
+                      <Users size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.hr.past_node3')}</span>
+                    </div>
+                  </foreignObject>
                 </g>
 
                 <foreignObject x="500" y="130" width="300" height="100">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, Zap } from 'lucide-react';
+import { ChevronDown, FileEdit, XCircle, Paperclip, Zap } from 'lucide-react';
 
 interface Props {
   onNext: () => void;
@@ -43,17 +43,32 @@ export default function FinanceScenario({ onNext, isLast }: Props) {
                 <motion.circle cx="400" cy="40" r="4" fill="#ef4444" animate={{ cy: [40, 120, 200] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} />
                 
                 <g transform="translate(350, 20)">
-                  <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node1')}</text>
+                  <rect width="110" height="40" rx="8" fill="#111" stroke="#333" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#888]">
+                      <FileEdit size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.finance.past_node1')}</span>
+                    </div>
+                  </foreignObject>
                 </g>
                 <g transform="translate(350, 100)">
-                  <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node2')}</text>
-                  <motion.rect width="100" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '50px', originY: '20px' }} />
+                  <rect width="110" height="40" rx="8" fill="#220000" stroke="#ef4444" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#ef4444]">
+                      <XCircle size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.finance.past_node2')}</span>
+                    </div>
+                  </foreignObject>
+                  <motion.rect width="110" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '55px', originY: '20px' }} />
                 </g>
                 <g transform="translate(350, 180)">
-                  <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node3')}</text>
+                  <rect width="110" height="40" rx="8" fill="#111" stroke="#333" />
+                  <foreignObject x="0" y="0" width="110" height="40">
+                    <div className="w-full h-full flex items-center justify-center gap-1.5 text-[#888]">
+                      <Paperclip size={14} />
+                      <span className="text-[12px] whitespace-nowrap">{t('scenarios.finance.past_node3')}</span>
+                    </div>
+                  </foreignObject>
                 </g>
 
                 <foreignObject x="250" y="240" width="300" height="60">
