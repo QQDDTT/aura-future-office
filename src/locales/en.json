@@ -1,0 +1,54 @@
+{
+  "translation": {
+    "hero": {
+      "title": "Reshape the Routine: When AI Becomes Your Best Colleague",
+      "subtitle": "Break the 'rigid walls' of traditional software. Powered by a deep cognitive engine, Aura Agent actively deconstructs your intent, flows through isolated systems, and executes tedious tasks instantly.",
+      "cta": "Explore Future Workflows"
+    },
+    "scenarios": {
+      "meeting": {
+        "intent": "Schedule an alignment meeting with the Product team next Wed afternoon, and book a room with a whiteboard.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Check calendars -> Send coordination emails -> Login to book room. Heavy and mechanical.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Coordinated calendars of 5 team members (all free at 14:00)",
+        "future_task2": "Called Admin API to book 'Innovation Space A'",
+        "future_task3": "Drafted and sent calendar invites, CC'd management"
+      },
+      "finance": {
+        "intent": "Reimburse my flights and taxi fares from last week's Beijing trip.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Find template -> Fill complex codes -> Attach receipts -> Rejected and resubmitted.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Extracted amounts and itinerary from receipts",
+        "future_task2": "Verified against corporate travel policy (Compliant)",
+        "future_task3": "Generated voucher and routed to manager for 1-click approval"
+      },
+      "hr": {
+        "intent": "New hire Alice joins the Design team tomorrow. Set up her environment.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "HR profiles -> IT tickets for email -> Manually assign seats in various tools.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Provisioned corporate email account (alice@)",
+        "future_task2": "Assigned seats for Figma, Slack, and Jira",
+        "future_task3": "Generated and sent customized onboarding guide"
+      },
+      "data": {
+        "intent": "Summarize this month's CAC by channel, compile a brief, and send to execs.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Export CSVs -> Merge in Excel -> Create charts -> Paste to PPT and email.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Queried data across 3 core business systems",
+        "future_task2": "Distilled key metric fluctuations into visual insights",
+        "future_task3": "Packaged into an executive brief and dispatched to the board"
+      }
+    },
+    "engine": {
+      "title": "Aura Reactor: The Heart of Your Digital Colleague",
+      "understand": "Perceive Intent",
+      "plan": "Plan & Orchestrate",
+      "execute": "Execute & Reflect",
+      "cta": "Start Your Digital Collaboration Era"
+    }
+  }
+}
