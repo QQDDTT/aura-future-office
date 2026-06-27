@@ -2,8 +2,13 @@ import { useState } from 'react';
 import AmbientBackground from './components/AmbientBackground';
 import I18nSwitcher from './components/I18nSwitcher';
 import HeroSection from './components/HeroSection';
-import ScenarioCard from './components/ScenarioCard';
 import EngineSection from './components/EngineSection';
+
+import MeetingScenario from './components/scenarios/MeetingScenario';
+import FinanceScenario from './components/scenarios/FinanceScenario';
+import HRScenario from './components/scenarios/HRScenario';
+import DataScenario from './components/scenarios/DataScenario';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -53,10 +58,10 @@ function App() {
           className="w-full absolute inset-0 overflow-y-auto no-scrollbar flex items-center justify-center"
         >
           {currentSlide === 0 && <HeroSection onNext={nextSlide} />}
-          {currentSlide === 1 && <ScenarioCard scenarioKey="meeting" onNext={nextSlide} />}
-          {currentSlide === 2 && <ScenarioCard scenarioKey="finance" onNext={nextSlide} />}
-          {currentSlide === 3 && <ScenarioCard scenarioKey="hr" onNext={nextSlide} />}
-          {currentSlide === 4 && <ScenarioCard scenarioKey="data" onNext={nextSlide} isLast />}
+          {currentSlide === 1 && <MeetingScenario onNext={nextSlide} />}
+          {currentSlide === 2 && <FinanceScenario onNext={nextSlide} />}
+          {currentSlide === 3 && <HRScenario onNext={nextSlide} />}
+          {currentSlide === 4 && <DataScenario onNext={nextSlide} isLast />}
           {currentSlide === 5 && <EngineSection onRestart={restart} />}
         </motion.main>
       </AnimatePresence>
