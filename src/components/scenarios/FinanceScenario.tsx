@@ -44,16 +44,16 @@ export default function FinanceScenario({ onNext, isLast }: Props) {
                 
                 <g transform="translate(350, 20)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">手工填单</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node1')}</text>
                 </g>
                 <g transform="translate(350, 100)">
                   <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">科目错误打回</text>
+                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node2')}</text>
                   <motion.rect width="100" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '50px', originY: '20px' }} />
                 </g>
                 <g transform="translate(350, 180)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">重新贴发票</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.finance.past_node3')}</text>
                 </g>
 
                 <foreignObject x="250" y="240" width="300" height="60">
@@ -119,11 +119,11 @@ export default function FinanceScenario({ onNext, isLast }: Props) {
       <div className="mt-16 z-10 flex justify-center h-16">
         {!isFuture ? (
           <button onClick={() => setIsFuture(true)} className="px-8 py-4 rounded-full bg-amber-500/10 text-amber-300 font-bold border border-amber-500/40 hover:bg-amber-500/20 transition-all hover:scale-105 shadow-[0_0_30px_rgba(245,158,11,0.2)]">
-            🚀 注入 Aura Agent
+            🚀 {t('actions.inject_aura')}
           </button>
         ) : (
           <button onClick={onNext} className="flex flex-col items-center gap-2 text-amber-200 hover:text-white transition-colors duration-300 group">
-            <span className="text-sm font-medium tracking-wider">{isLast ? '进入反应堆' : '下一个场景'}</span>
+            <span className="text-sm font-medium tracking-wider">{isLast ? t('actions.enter_reactor') : t('actions.next_scenario')}</span>
             <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-amber-400 drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
           </button>
         )}

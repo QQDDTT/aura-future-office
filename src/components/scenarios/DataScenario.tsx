@@ -45,20 +45,20 @@ export default function DataScenario({ onNext, isLast }: Props) {
                 
                 <g transform="translate(100, 40)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">导表 A</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.data.past_node1')}</text>
                 </g>
                 <g transform="translate(100, 130)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">导表 B</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.data.past_node2')}</text>
                 </g>
                 <g transform="translate(100, 220)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">导表 C</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.data.past_node3')}</text>
                 </g>
 
                 <g transform="translate(350, 130)">
                   <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">手动 Excel 汇兑</text>
+                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.data.past_node4')}</text>
                   <motion.rect width="100" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '50px', originY: '20px' }} />
                 </g>
 
@@ -125,11 +125,11 @@ export default function DataScenario({ onNext, isLast }: Props) {
       <div className="mt-16 z-10 flex justify-center h-16">
         {!isFuture ? (
           <button onClick={() => setIsFuture(true)} className="px-8 py-4 rounded-full bg-emerald-500/10 text-emerald-300 font-bold border border-emerald-500/40 hover:bg-emerald-500/20 transition-all hover:scale-105 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-            🚀 注入 Aura Agent
+            🚀 {t('actions.inject_aura')}
           </button>
         ) : (
           <button onClick={onNext} className="flex flex-col items-center gap-2 text-emerald-200 hover:text-white transition-colors duration-300 group">
-            <span className="text-sm font-medium tracking-wider">{isLast ? '进入反应堆' : '下一个场景'}</span>
+            <span className="text-sm font-medium tracking-wider">{isLast ? t('actions.enter_reactor') : t('actions.next_scenario')}</span>
             <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-emerald-400 drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
           </button>
         )}

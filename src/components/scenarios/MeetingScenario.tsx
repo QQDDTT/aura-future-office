@@ -44,20 +44,20 @@ export default function MeetingScenario({ onNext, isLast }: Props) {
                 
                 <g transform="translate(100, 130)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">查阅多方日历</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.meeting.past_node1')}</text>
                 </g>
                 <g transform="translate(250, 130)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">邮件群发协调</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.meeting.past_node2')}</text>
                 </g>
                 <g transform="translate(400, 130)">
                   <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">会议室冲突</text>
+                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.meeting.past_node3')}</text>
                   <motion.rect width="100" height="40" rx="8" fill="none" stroke="#ef4444" animate={{ scale: [1, 1.2, 1], opacity: [1, 0, 1] }} transition={{ duration: 2, repeat: Infinity }} style={{ originX: '50px', originY: '20px' }} />
                 </g>
                 <g transform="translate(550, 130)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">重新协调</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.meeting.past_node4')}</text>
                 </g>
 
                 <foreignObject x="250" y="200" width="300" height="100">
@@ -122,11 +122,11 @@ export default function MeetingScenario({ onNext, isLast }: Props) {
       <div className="mt-16 z-10 flex justify-center h-16">
         {!isFuture ? (
           <button onClick={() => setIsFuture(true)} className="px-8 py-4 rounded-full bg-cyan-500/10 text-cyan-300 font-bold border border-cyan-500/40 hover:bg-cyan-500/20 transition-all hover:scale-105 shadow-[0_0_30px_rgba(6,182,212,0.2)]">
-            🚀 注入 Aura Agent
+            🚀 {t('actions.inject_aura')}
           </button>
         ) : (
           <button onClick={onNext} className="flex flex-col items-center gap-2 text-cyan-200 hover:text-white transition-colors duration-300 group">
-            <span className="text-sm font-medium tracking-wider">{isLast ? '进入反应堆' : '下一个场景'}</span>
+            <span className="text-sm font-medium tracking-wider">{isLast ? t('actions.enter_reactor') : t('actions.next_scenario')}</span>
             <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
           </button>
         )}

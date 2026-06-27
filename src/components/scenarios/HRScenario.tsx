@@ -44,15 +44,15 @@ export default function HRScenario({ onNext, isLast }: Props) {
                 
                 <g transform="translate(150, 130)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">提IT工单</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node1')}</text>
                 </g>
                 <g transform="translate(350, 60)">
                   <rect width="100" height="40" rx="8" fill="#220000" stroke="#ef4444" />
-                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">等候邮箱分配</text>
+                  <text x="50" y="25" fill="#ef4444" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node2')}</text>
                 </g>
                 <g transform="translate(350, 200)">
                   <rect width="100" height="40" rx="8" fill="#111" stroke="#333" />
-                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">手工加企微群</text>
+                  <text x="50" y="25" fill="#666" fontSize="14" textAnchor="middle">{t('scenarios.hr.past_node3')}</text>
                 </g>
 
                 <foreignObject x="500" y="130" width="300" height="100">
@@ -118,11 +118,11 @@ export default function HRScenario({ onNext, isLast }: Props) {
       <div className="mt-16 z-10 flex justify-center h-16">
         {!isFuture ? (
           <button onClick={() => setIsFuture(true)} className="px-8 py-4 rounded-full bg-rose-500/10 text-rose-300 font-bold border border-rose-500/40 hover:bg-rose-500/20 transition-all hover:scale-105 shadow-[0_0_30px_rgba(244,63,94,0.2)]">
-            🚀 注入 Aura Agent
+            🚀 {t('actions.inject_aura')}
           </button>
         ) : (
           <button onClick={onNext} className="flex flex-col items-center gap-2 text-rose-200 hover:text-white transition-colors duration-300 group">
-            <span className="text-sm font-medium tracking-wider">{isLast ? '进入反应堆' : '下一个场景'}</span>
+            <span className="text-sm font-medium tracking-wider">{isLast ? t('actions.enter_reactor') : t('actions.next_scenario')}</span>
             <ChevronDown className="w-6 h-6 animate-bounce group-hover:text-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
           </button>
         )}

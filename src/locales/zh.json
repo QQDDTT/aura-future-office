@@ -13,7 +13,11 @@
         "future_title": "未来 (Aura Agent)",
         "future_task1": "已协调 5 位项目成员日历 (14:00均空闲)",
         "future_task2": "自动调用行政 API 预定「创新空间 A」",
-        "future_task3": "已撰写并发出会议邀请邮件，自动抄送管理层"
+        "future_task3": "已撰写并发出会议邀请邮件，自动抄送管理层",
+        "past_node1": "查阅多方日历",
+        "past_node2": "邮件群发协调",
+        "past_node3": "会议室冲突",
+        "past_node4": "重新协调"
       },
       "finance": {
         "intent": "报销上周去北京出差的机票和打车费。",
@@ -22,7 +26,10 @@
         "future_title": "未来 (Aura Agent)",
         "future_task1": "自动提取发票金额及行程信息",
         "future_task2": "后台流式比对公司差旅制度 (合规)",
-        "future_task3": "已生成电子凭证并提交主管，等待一键同意"
+        "future_task3": "已生成电子凭证并提交主管，等待一键同意",
+        "past_node1": "手工填单",
+        "past_node2": "科目错误打回",
+        "past_node3": "重新贴发票"
       },
       "hr": {
         "intent": "新同事 Alice 明天入职设计部，准备好环境。",
@@ -31,7 +38,10 @@
         "future_title": "未来 (Aura Agent)",
         "future_task1": "自动激活公司域邮箱账户 (alice@)",
         "future_task2": "自动分配 Figma, Slack, Jira 企业组权限",
-        "future_task3": "生成定制化入职指南并自动投递"
+        "future_task3": "生成定制化入职指南并自动投递",
+        "past_node1": "提IT工单",
+        "past_node2": "等候邮箱分配",
+        "past_node3": "手工加企微群"
       },
       "data": {
         "intent": "汇总本月各渠道获客成本，整理成简报发给管理层。",
@@ -40,7 +50,11 @@
         "future_title": "未来 (Aura Agent)",
         "future_task1": "穿透并拉取 3 个核心业务系统数据",
         "future_task2": "提炼关键指标波动并生成可视化结论",
-        "future_task3": "已打包为高层简报，发送至董事会邮件组"
+        "future_task3": "已打包为高层简报，发送至董事会邮件组",
+        "past_node1": "导表 A",
+        "past_node2": "导表 B",
+        "past_node3": "导表 C",
+        "past_node4": "手动 Excel 汇兑"
       }
     },
     "engine": {
@@ -49,6 +63,11 @@
       "plan": "规划与调度",
       "execute": "执行与反思",
       "cta": "开启你的数字协作时代"
+    },
+    "actions": {
+      "inject_aura": "注入 Aura Agent",
+      "next_scenario": "下一个场景",
+      "enter_reactor": "进入反应堆"
     }
   }
 }
