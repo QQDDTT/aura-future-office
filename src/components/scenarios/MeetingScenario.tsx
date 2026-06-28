@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown, CalendarDays, Mail, TriangleAlert, RefreshCw, Zap } from 'lucide-react';
 import VeraNarrator from '../VeraNarrator';
+import { CalendarWidget, ChatWidget, TaskWidget } from '../widgets';
 
 interface Props {
   onNext: () => void;
@@ -101,6 +102,20 @@ export default function MeetingScenario({ onNext, isLast }: Props) {
                   <filter id="glowCyan"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                   <linearGradient id="cyanGrad"><stop offset="0%" stopColor="#06b6d4" /><stop offset="100%" stopColor="#3b82f6" /></linearGradient>
                 </defs>
+                
+                <foreignObject x="-100" y="-50" width="1000" height="400" className="pointer-events-none">
+                  <div className="w-full h-full relative">
+                    <div className="absolute top-10 left-10 opacity-70 -rotate-6 scale-75 hidden md:block">
+                      <CalendarWidget delay={1} />
+                    </div>
+                    <div className="absolute bottom-10 right-10 opacity-70 rotate-6 scale-75 hidden md:block">
+                      <ChatWidget delay={1.2} />
+                    </div>
+                    <div className="absolute top-10 right-20 opacity-60 rotate-2 scale-75 hidden lg:block">
+                      <TaskWidget delay={1.4} />
+                    </div>
+                  </div>
+                </foreignObject>
                 
                 <circle cx="400" cy="150" r="100" fill="url(#cyanGrad)" opacity="0.1" filter="url(#glowCyan)">
                   <animate attributeName="r" values="90;110;90" dur="4s" repeatCount="indefinite" />

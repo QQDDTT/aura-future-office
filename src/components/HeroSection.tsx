@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Sparkles } from 'lucide-react';
 import VeraNarrator from './VeraNarrator';
+import { WelcomeWidget, AppLauncherWidget, DashboardWidget } from './widgets';
 
 interface Props {
   onNext: () => void;
@@ -12,7 +13,20 @@ export default function HeroSection({ onNext }: Props) {
   const easeOutExpo: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 relative z-10">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 relative z-10 overflow-hidden">
+      {/* Floating Widgets from the extracted conceptual assets */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-0">
+        <div className="absolute top-20 left-10 md:left-20 opacity-70 -rotate-3 scale-90 md:scale-100">
+          <WelcomeWidget delay={0.5} />
+        </div>
+        <div className="absolute bottom-20 right-10 md:right-20 opacity-70 rotate-3 scale-90 md:scale-100">
+          <DashboardWidget delay={0.7} />
+        </div>
+        <div className="absolute top-40 right-10 md:right-32 opacity-60 rotate-6 scale-75 md:scale-90 hidden md:block">
+          <AppLauncherWidget delay={0.9} />
+        </div>
+      </div>
+
       <motion.div 
         initial={{ opacity: 0, y: 50, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}

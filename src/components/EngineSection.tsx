@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Brain, Network, Cpu } from 'lucide-react';
 import VeraNarrator from './VeraNarrator';
+import { TerminalWidget } from './widgets';
 
 interface Props {
   onRestart: () => void;
@@ -56,8 +57,10 @@ export default function EngineSection({ onRestart }: Props) {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: easeOutExpo }}
-        className="mt-28"
+        className="mt-16 flex flex-col items-center gap-12 relative z-10"
       >
+        <TerminalWidget delay={1.0} />
+        
         <button 
           onClick={onRestart}
           className="px-10 py-5 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
