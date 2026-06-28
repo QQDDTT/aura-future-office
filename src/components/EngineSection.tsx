@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Brain, Network, Cpu } from 'lucide-react';
+import VeraNarrator from './VeraNarrator';
 
 interface Props {
   onRestart: () => void;
@@ -24,8 +25,9 @@ export default function EngineSection({ onRestart }: Props) {
       transition={{ duration: 0.8, ease: easeOutExpo }}
       className="min-h-screen w-full max-w-5xl mx-auto flex flex-col items-center justify-center relative px-6"
     >
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 flex flex-col items-center gap-8">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('engine.title')}</h2>
+        <VeraNarrator text={t('vera.engine')} />
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 w-full relative">
@@ -60,7 +62,7 @@ export default function EngineSection({ onRestart }: Props) {
           onClick={onRestart}
           className="px-10 py-5 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)]"
         >
-          {t('engine.cta')}
+          {t('vera.cta')}
         </button>
       </motion.div>
     </motion.div>

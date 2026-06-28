@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Sparkles } from 'lucide-react';
+import VeraNarrator from './VeraNarrator';
 
 interface Props {
   onNext: () => void;
@@ -29,18 +30,23 @@ export default function HeroSection({ onNext }: Props) {
           <span>Aura Future Office</span>
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 leading-tight">
+        <motion.h1 
+          initial={{ opacity: 0, y: 50, skewY: 5 }}
+          animate={{ opacity: 1, y: 0, skewY: 0 }}
+          transition={{ duration: 1, ease: easeOutExpo }}
+          className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400 leading-tight"
+        >
           {t('hero.title')}
-        </h1>
+        </motion.h1>
         
-        <motion.p 
+        <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2, ease: easeOutExpo }}
-          className="text-lg md:text-xl text-gray-400 leading-relaxed mb-12 max-w-3xl"
+          className="mb-12 z-20"
         >
-          {t('hero.subtitle')}
-        </motion.p>
+          <VeraNarrator text={t('vera.hero')} />
+        </motion.div>
         
         <motion.button
           onClick={onNext}

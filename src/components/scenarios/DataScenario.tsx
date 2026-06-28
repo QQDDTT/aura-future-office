@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ChevronDown, Table, FileSpreadsheet, Zap } from 'lucide-react';
+import VeraNarrator from '../VeraNarrator';
 
 interface Props {
   onNext: () => void;
@@ -22,9 +23,7 @@ export default function DataScenario({ onNext, isLast }: Props) {
       className="min-h-screen w-full flex flex-col items-center justify-center py-20 px-4"
     >
       <div className="mb-12 flex justify-center z-10 w-full">
-        <div className="inline-block px-8 py-4 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md text-center max-w-2xl shadow-xl">
-          <span className="text-lg md:text-xl font-medium text-emerald-200">"{t(`scenarios.${scenarioKey}.intent`)}"</span>
-        </div>
+        <VeraNarrator text={t(`vera.${scenarioKey}`)} />
       </div>
 
       <div className="relative w-full max-w-5xl h-[400px] flex items-center justify-center">

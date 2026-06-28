@@ -68,6 +68,17 @@
       "inject_aura": "Inject Aura Agent",
       "next_scenario": "Next Scenario",
       "enter_reactor": "Enter Reactor"
+    },
+    "vera": {
+      "hero": "Are you still working for the system? That's ridiculous. Today, we break all the rules. Let AI be your best colleague.",
+      "past_wall": "This is traditional software. Cold, rigid, forcing you to adapt to its stupid rules.",
+      "future_flow": "In the world of Aura, the system must adapt to your work intent.",
+      "meeting": "Just one sentence: 'Schedule an alignment meeting with the Product team next Wed afternoon.'",
+      "finance": "Tedious expense reports? Throw them to the underlying engine.",
+      "hr": "Welcoming a new colleague: 'New hire Alice joins the Design team tomorrow.'",
+      "data": "Data review: 'Summarize this month's CAC and generate a brief.'",
+      "engine": "Abandon those complex processes. All this operation stems from this absolutely pure digital heart.",
+      "cta": "Want to redefine the way you work? Click here, we start now."
     }
   }
 }
