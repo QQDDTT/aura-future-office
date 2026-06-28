@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-interface WidgetCardProps extends HTMLMotionProps<"div"> {
+interface WidgetCardProps extends React.ComponentProps<typeof motion.div> {
   children: React.ReactNode;
   delay?: number;
   className?: string;
