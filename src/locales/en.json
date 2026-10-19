@@ -1,0 +1,84 @@
+{
+  "translation": {
+    "hero": {
+      "title": "Reshape the Routine: When AI Becomes Your Best Colleague",
+      "subtitle": "Break the 'rigid walls' of traditional software. Powered by a deep cognitive engine, Aura Agent actively deconstructs your intent, flows through isolated systems, and executes tedious tasks instantly.",
+      "cta": "Explore Future Workflows"
+    },
+    "scenarios": {
+      "meeting": {
+        "intent": "Schedule an alignment meeting with the Product team next Wed afternoon, and book a room with a whiteboard.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Check calendars -> Send coordination emails -> Login to book room. Heavy and mechanical.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Coordinated calendars of 5 team members (all free at 14:00)",
+        "future_task2": "Called Admin API to book 'Innovation Space A'",
+        "future_task3": "Drafted and sent calendar invites, CC'd management",
+        "past_node1": "Check Calendars",
+        "past_node2": "Group Emails",
+        "past_node3": "Room Conflict",
+        "past_node4": "Re-coordinate"
+      },
+      "finance": {
+        "intent": "Reimburse my flights and taxi fares from last week's Beijing trip.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Find template -> Fill complex codes -> Attach receipts -> Rejected and resubmitted.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Extracted amounts and itinerary from receipts",
+        "future_task2": "Verified against corporate travel policy (Compliant)",
+        "future_task3": "Generated voucher and routed to manager for 1-click approval",
+        "past_node1": "Manual Entry",
+        "past_node2": "Code Error",
+        "past_node3": "Re-attach"
+      },
+      "hr": {
+        "intent": "New hire Alice joins the Design team tomorrow. Set up her environment.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "HR profiles -> IT tickets for email -> Manually assign seats in various tools.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Provisioned corporate email account (alice@)",
+        "future_task2": "Assigned seats for Figma, Slack, and Jira",
+        "future_task3": "Generated and sent customized onboarding guide",
+        "past_node1": "IT Ticket",
+        "past_node2": "Wait for Email",
+        "past_node3": "Manual Groups"
+      },
+      "data": {
+        "intent": "Summarize this month's CAC by channel, compile a brief, and send to execs.",
+        "past_title": "Past (Traditional Software)",
+        "past_desc": "Export CSVs -> Merge in Excel -> Create charts -> Paste to PPT and email.",
+        "future_title": "Future (Aura Agent)",
+        "future_task1": "Queried data across 3 core business systems",
+        "future_task2": "Distilled key metric fluctuations into visual insights",
+        "future_task3": "Packaged into an executive brief and dispatched to the board",
+        "past_node1": "Export A",
+        "past_node2": "Export B",
+        "past_node3": "Export C",
+        "past_node4": "Manual Merge"
+      }
+    },
+    "engine": {
+      "title": "Aura Reactor: The Heart of Your Digital Colleague",
+      "understand": "Perceive Intent",
+      "plan": "Plan & Orchestrate",
+      "execute": "Execute & Reflect",
+      "cta": "Start Your Digital Collaboration Era"
+    },
+    "actions": {
+      "inject_aura": "Inject Aura Agent",
+      "next_scenario": "Next Scenario",
+      "enter_reactor": "Enter Reactor"
+    },
+    "vera": {
+      "hero": "Are you still working for the system? That's ridiculous. Today, we break all the rules. Let AI be your best colleague.",
+      "past_wall": "This is traditional software. Cold, rigid, forcing you to adapt to its stupid rules.",
+      "future_flow": "In the world of Aura, the system must adapt to your work intent.",
+      "meeting": "Just one sentence: 'Schedule an alignment meeting with the Product team next Wed afternoon.'",
+      "finance": "Tedious expense reports? Throw them to the underlying engine.",
+      "hr": "Welcoming a new colleague: 'New hire Alice joins the Design team tomorrow.'",
+      "data": "Data review: 'Summarize this month's CAC and generate a brief.'",
+      "engine": "Abandon those complex processes. All this operation stems from this absolutely pure digital heart.",
+      "cta": "Want to redefine the way you work? Click here, we start now."
+    }
+  }
+}
